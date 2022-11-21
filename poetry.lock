@@ -388,6 +388,24 @@ format = ["fqdn", "idna", "isoduration", "jsonpointer (>1.13)", "rfc3339-validat
 format-nongpl = ["fqdn", "idna", "isoduration", "jsonpointer (>1.13)", "rfc3339-validator", "rfc3986-validator (>0.1.0)", "uri-template", "webcolors (>=1.11)"]
 
 [[package]]
+name = "link"
+version = "1.0.1"
+description = "Internal asynchronous Pub/Sub for Python"
+category = "main"
+optional = false
+python-versions = "^3.10"
+develop = false
+
+[package.dependencies]
+loguru = "^0.6.0"
+
+[package.source]
+type = "git"
+url = "git@github.com:swissquant/link.git"
+reference = "1.0.1"
+resolved_reference = "2594184903c037cbf22dd5f335f976770ce3ae4e"
+
+[[package]]
 name = "loguru"
 version = "0.6.0"
 description = "Python logging made (stupidly) simple"
@@ -781,7 +799,7 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "d0728f007f3ac1b19c7e455666b551c85852b225d926136eaea22b617c2819c8"
+content-hash = "5bc378e342b1c3b391408b7cd7d9ecc25c2e29351906b2003dd20da1cc28ea35"
 
 [metadata.files]
 aiohttp = []
@@ -830,6 +848,7 @@ ipfshttpclient = [
     {file = "ipfshttpclient-0.8.0a2.tar.gz", hash = "sha256:0d80e95ee60b02c7d414e79bf81a36fc3c8fbab74265475c52f70b2620812135"},
 ]
 jsonschema = []
+link = []
 loguru = [
     {file = "loguru-0.6.0-py3-none-any.whl", hash = "sha256:4e2414d534a2ab57573365b3e6d0234dfb1d84b68b7f3b948e6fb743860a77c3"},
     {file = "loguru-0.6.0.tar.gz", hash = "sha256:066bd06758d0a513e9836fd9c6b5a75bfb3fd36841f4b996bc60b547a309d41c"},

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "spyd3r"
-version = "0.2.0"
+version = "0.2.1"
 description = "Python web3 framework to interact with various protcols in a simple asycnhronous way"
 packages = [
     { include = "spyd3r" },
