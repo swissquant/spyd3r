@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "spyd3r"
-version = "0.2.1"
+version = "0.3.0"
 description = "Python web3 framework to interact with various protcols in a simple asycnhronous way"
 packages = [
     { include = "spyd3r" },
@@ -26,7 +26,7 @@ requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.black]
-target-version = ['py39']
+target-version = ['py310']
 line-length = 120
 exclude = '''
 /(
