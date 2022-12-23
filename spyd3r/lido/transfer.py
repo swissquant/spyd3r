@@ -41,13 +41,18 @@ class LIDO_stETH_Transfer:
 
         while True:
             match json.loads(await self.ws.recv()):
-                case {"params": {"result": {"topics": [_, address_from, address_to], "data": data}}}:
+                case {
+                    "params": {
+                        "result": {"topics": [_, address_from, address_to], "data": data, "transactionHash": hash}
+                    }
+                }:
                     # Decoding the data
                     data = bytes.fromhex(data[2:])
                     data = decode_abi(["uint256"], data)
 
                     # Publishing the update
                     message = {
+                        "hash": hash,
                         "from": address_from,
                         "to": address_to,
                         "amount": data[0] / 1e18,
