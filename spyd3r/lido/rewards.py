@@ -41,7 +41,7 @@ class LIDO_stETH_Rewards:
 
         while True:
             match json.loads(await self.ws.recv()):
-                case {"params": {"event": {"data": data}}}:
+                case {"params": {"result": {"data": data}}}:
                     # Decoding the data
                     data = bytes.fromhex(data[2:])
                     data = decode_abi(["uint256", "uint256", "uint256", "uint256"], data)
