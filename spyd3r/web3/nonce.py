@@ -13,8 +13,8 @@ nonce_lock = threading.Lock()  # Protect against multiple nonce acquisitions
 
 
 @to_async
-def fetch_nonce(address: str) -> float:
-    return web3.eth.get_transaction_count(address)
+def fetch_nonce(address: str) -> int:
+    return int(web3.eth.get_transaction_count(address))
 
 
 # Nonce manager
@@ -32,8 +32,7 @@ class Nonce:
     async def start(self, freq_update: float = 60):
         while True:
             with nonce_lock:
-                tx_count = await fetch_nonce(address=ETH_ADDRESS)
-                self.nonce = max(self.nonce, tx_count)
+                self.nonce = max(self.nonce, await fetch_nonce(address=ETH_ADDRESS))
                 logger.info(f"nonce: {self.nonce}")
 
             await asyncio.sleep(freq_update)
