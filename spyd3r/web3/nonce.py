@@ -32,7 +32,10 @@ class Nonce:
     async def start(self, freq_update: float = 60):
         while True:
             with nonce_lock:
-                self.nonce = max(self.nonce, await fetch_nonce(address=ETH_ADDRESS))
+                if self.nonce is None:
+                    self.nonce = await fetch_nonce(address=ETH_ADDRESS)
+                else:
+                    self.nonce = max(self.nonce, await fetch_nonce(address=ETH_ADDRESS))
                 logger.info(f"nonce: {self.nonce}")
 
             await asyncio.sleep(freq_update)
