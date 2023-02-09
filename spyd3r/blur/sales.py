@@ -6,6 +6,9 @@ from spyd3r.web3 import Logs, parse_address_from_topic
 
 
 class Sales(Logs):
+
+    pubsub_topic = "blur:sales"
+
     def __init__(self, rpc_endpoint: str):
         super().__init__(
             rpc_endpoint=rpc_endpoint,
@@ -44,4 +47,4 @@ class Sales(Logs):
 
         # Sending a pub/sub message
         message = {"hash": tx_hash, "buyer": buyer, "seller": seller, "collection": collection, "price": price}
-        pubsub.send(topic="blur_sales", message=message)
+        pubsub.send(topic=self.pubsub_topic, message=message)
