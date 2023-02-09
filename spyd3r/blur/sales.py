@@ -43,7 +43,7 @@ class Sales(Logs):
 
         # Extracting the collection address and the price
         collection = Web3.toChecksumAddress(data[7])
-        price = Web3.from_wei(data[11], unit="ether")
+        price = float(Web3.from_wei(data[11], unit="ether"))
 
         # Sending a pub/sub message
         message = {"hash": tx_hash, "buyer": buyer, "seller": seller, "collection": collection, "price": price}
