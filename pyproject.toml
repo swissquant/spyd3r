@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "spyd3r"
-version = "0.7.5"
+version = "1.0.0"
 description = "Python web3 framework to interact with various protcols in a simple asycnhronous way"
 packages = [
     { include = "spyd3r" },
@@ -8,11 +8,11 @@ packages = [
 authors = ["SwissQuant"]
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.7"
 python-dotenv = "^0.20.0"
 loguru = "^0.6.0"
 web3 = { git = "git@github.com:ethereum/web3.py.git", rev = "14cb121" }
-link = { git = "git@github.com:swissquant/link.git", tag = "1.0.1" }
+link = { git = "git@github.com:swissquant/link.git", tag = "1.0.2" }
 websockets = "^10.3"
 
 [tool.poetry.dev-dependencies]

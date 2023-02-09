@@ -7,7 +7,7 @@ from spyd3r.helpers import restart_on_failure
 from env import WEB3_NODE
 
 
-class Web3_Transactions:
+class Transactions:
 
     topic = "web3:transactions"
 
