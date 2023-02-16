@@ -10,7 +10,7 @@ class ERC721(Contract):
     )
 
     @to_async
-    def fetch_name(self, address: str):
+    def fetch_name(self):
         """
         Fetch the fees to create an order on a given market
         """
